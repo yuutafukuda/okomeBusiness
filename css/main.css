@@ -1,0 +1,224 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@font-face {
+    font-family: 'Custom Font';
+    src: url('font/HannariMincho-Regular.otf') format('opentype');
+}
+
+:root {
+    --leading: 2em;
+}
+
+
+body {
+    font-family:  'Custom Font', serif;
+    margin: 0;
+}
+
+.hero-bg {
+    background: url('../images/tannbo.jpg');
+    background-position: 45% 85%;
+    color: white;
+    text-align: center;
+    padding-bottom: 4em;
+} 
+
+header {
+    padding: 1em 0;
+}
+
+.hero-bg img {
+    background-color: white;
+    padding: 2px;
+}
+
+section {
+    margin: 0 1em;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 2em 0 1.2em;
+}
+
+.subtitle {
+    display: block;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+.subtitle::before {
+    content: '';
+    position: absolute;
+    width: 3em;
+    height: .3em;
+    margin-left: -.4em;
+    background-color: green;
+    opacity: .8;
+    bottom: -.1em;
+    z-index: -1;
+}
+
+.hero-bg p {
+    font-weight: bold;
+    margin: 0 1em 3em;
+}
+.form-container {
+    background-color: white;
+    color: black;
+    margin: 2em -1em 0;
+    padding: 2em;
+}
+
+label{
+    color: rgb(29, 114, 29);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+}
+
+input[type=text] {
+    border: 1px solid #707070;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: .5em;
+    margin-top: 1.2em;
+}
+
+.form-container p {
+    color: gray;
+    margin-bottom: 1.5em;
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin-top: .3em;
+}
+
+input[type=button] {
+    background-color: rgb(29, 114, 29);
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    padding: 1em 0;
+    border-radius: .5em;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+input[type=button]:hover{
+    background-color: rgb(16, 80, 16);
+}
+
+.bottom {
+    margin: 0;
+}
+.right-colum {
+    text-align: center;
+    margin: 3em 1em;
+}
+h2 {
+    position: relative;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    width: 3.2em;
+    height: .3em;
+    margin-left: -2.4em;
+    background-color: rgb(9, 145, 9);
+    opacity: .7;
+    bottom: 0;
+    z-index: -1;
+}
+p {
+    line-height: var(--leading);
+}
+.bottom img {
+    width: 100%;
+}
+
+@media (min-width: 730px){
+    .title {
+        display: none;
+    }
+    h1::after {
+        content: '「新之助 しんのすけ」';
+    }
+    section {
+        margin: 0 4em;
+    }
+    .form-container {
+        margin: 2em 0 0;
+        padding: 2em;
+        border-radius: .5em;
+        box-shadow: 10px 10px 7px rgba(0,0,0,.3);
+    }
+}
+
+@media (min-width: 930px) {
+    .hero-bg {
+        text-align: left;
+    }
+    .hero-bg section {
+        width: 65%;
+    }
+
+    form {
+        display: flex;
+    }
+    .form-left {
+        width: 70%;
+    }
+    label {
+        margin: 0;
+    }
+    input[type=button] {
+        height: fit-content;
+        font-size: 1.1rem;
+        margin-top: 2.2em;
+        margin-left: 1em;
+        padding: .7em 0;
+        width: 30%;
+    }
+
+    .hero-bg p {
+        margin-bottom: 0;
+    }
+
+    section.bottom {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-areas:
+            "left right"
+    }
+    section.bottom img {
+        grid-area: left;
+        margin: 1em;
+    }
+    .right-colum {
+        grid-area: right;
+        margin-top: 0;
+        padding: 1em 5%;
+        text-align: left;
+        align-self: center;
+    }
+    h2 {
+        margin: 0;
+    }
+}
+
+.top {
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
